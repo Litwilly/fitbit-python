@@ -4,14 +4,13 @@
 import requests
 
 url = "https://api.fitbit.com/oauth2/token"
-refresh_path = "{path to store refresh token}/refresh.txt"
+refresh_path = "{path to refresh token}/refresh.txt"
 access_path = "{path to access token}/access.txt"
 
 # open and read refresh.txt to var remove newline
 opr = open(refresh_path, "r")
 refresh_token = opr.readline().strip()
 opr.close()
-# print"%sthis is after token" % (refresh_token)
 
 # contruct headers
 querystring = {"grant_type":"refresh_token","refresh_token":refresh_token}
